@@ -1,3 +1,32 @@
+## AI Developer Portfolio
+
+A modern Next.js + Tailwind portfolio with:
+- light glassmorphism UI with blue accents
+- hero section video background (local MP4 or optional YouTube loop)
+- animated sections
+- project and case study sections
+- floating AI chatbot demo
+- working contact form API (Resend)
+
+### Hero video
+
+- Add your compressed loop to **`public/videos/ai-coding-bg.mp4`** (coding / AI / terminal visuals).
+- Mobile shows a lightweight **coding-themed still image** automatically; tablet/desktop plays the MP4 with a dark readability overlay.
+
+## Contact Form Setup (Resend)
+
+1. Create a `.env.local` file in the project root.
+2. Copy values from `.env.example`.
+3. Set:
+   - `RESEND_API_KEY`
+   - `CONTACT_TO_EMAIL`
+   - `CONTACT_FROM_EMAIL` (optional, but recommended with your verified domain)
+4. Restart the dev server after adding env vars.
+
+When configured, contact submissions from the website are sent to your email via Resend.
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
