@@ -1,3 +1,16 @@
+export type PortfolioProject = {
+  category: string;
+  title: string;
+  description: string;
+  problem: string;
+  solution: string;
+  result: string;
+  technologies: string[];
+  image: string;
+  liveDemoUrl: string;
+  codeUrl: string;
+};
+
 export type SkillSpotlight = {
   title: string;
   icon: string;
@@ -148,90 +161,118 @@ export const allTools = Array.from(new Set(skillSpotlights.flatMap((s) => s.tool
   a.localeCompare(b),
 );
 
-export const projects = [
+export const projects: PortfolioProject[] = [
   {
     category: "Web app",
-    caption:
-      "High-energy landing page layout with cinematic imagery, gradient headline typography, navigation, and paired CTAs — typical of premium marketing sites.",
     title: "Performance automotive landing experience",
     description:
-      "A responsive hero-led landing focused on bold visuals, crisp hierarchy, and conversion-oriented CTAs for product launches.",
+      "Hero-led marketing landing with cinematic visuals, crisp hierarchy, and paired CTAs tuned for launches.",
+    problem:
+      "Product storytelling pages often feel generic—weak hierarchy and CTAs that don’t match the energy of the brand.",
+    solution:
+      "Structured a conversion-focused layout: bold hero, proof-forward sections, responsive typography, and performance-conscious imagery.",
+    result:
+      "A premium landing narrative that reads instantly and guides visitors toward the primary conversion paths.",
     technologies: ["Next.js / React", "Tailwind CSS", "Responsive layout", "Performance-focused assets"],
     image: "/projects/p1-web-app.png",
-    actionLabel: "View Demo",
-    actionLink: "#",
+    liveDemoUrl: "",
+    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
   },
   {
-    category: "Figma design",
-    caption:
-      "Brand-forward promotional composition with layered photography, expressive typography, star accents, and a strong hero CTA — ideal for ecommerce storytelling.",
+    category: "Product design · Figma",
     title: "AfroHealth-inspired wellness creative direction",
     description:
-      "UI exploration emphasizing contrast, lifestyle imagery, and a structured narrative block built for landing-page campaigns.",
-    technologies: ["Figma", "Visual hierarchy", "Design systems tokens", "Marketing layouts"],
+      "Campaign-ready composition blending lifestyle photography, expressive type, and a strong promotional CTA.",
+    problem:
+      "Wellness brands need landing visuals that feel aspirational without sacrificing clarity or scan-friendly structure.",
+    solution:
+      "Built a layered hero system with deliberate contrast, spacing rhythm, and narrative blocks optimized for ads and launches.",
+    result:
+      "A repeatable visual direction teams can extend across landing iterations without redesigning from scratch.",
+    technologies: ["Figma", "Visual hierarchy", "Design tokens", "Marketing layouts"],
     image: "/projects/p2-figma-design.png",
-    actionLabel: "View in Figma",
-    actionLink: "#",
+    liveDemoUrl: "",
+    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
   },
   {
     category: "Web app",
-    caption:
-      "Premium services landing page with aviation hero imagery, benefit-focused sections, feature grid cards, and bottom conversion band.",
     title: "Aviation brand landing — AeroFly-style experience",
     description:
-      "Editorial landing structure that sells trust and clarity: hero positioning, proof-forward sections, and consistent CTAs.",
+      "Trust-forward services landing with aviation storytelling, structured proof sections, and consistent CTAs.",
+    problem:
+      "High-trust services pages collapse when messaging is cluttered—users bounce before understanding the offer.",
+    solution:
+      "Designed an editorial grid: authoritative hero, benefit-led sections, feature cards, and a closing conversion band.",
+    result:
+      "Clear positioning end-to-end with fewer distractions and stronger continuity from hero to contact.",
     technologies: ["React / Next.js", "UI components", "Responsive grids", "Brand styling"],
     image: "/projects/p3-web-app.png",
-    actionLabel: "View Demo",
-    actionLink: "#",
+    liveDemoUrl: "",
+    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
   },
   {
-    category: "Shopify ecommerce · 3D product configurator",
-    caption:
-      "Enterprise positioning page showcasing immersive 3D product storytelling — hero headline plus interactive customization cues.",
+    category: "Shopify · 3D commerce",
     title: "Luxury ecommerce visualization concept",
     description:
-      "Experience-led commerce presentation highlighting configurators, variant selectors, and premium visual fidelity.",
+      "Immersive commerce presentation emphasizing configurators, variant storytelling, and premium visual fidelity.",
+    problem:
+      "Premium SKUs lose conversions when shoppers can’t visualize finishes and configurations confidently.",
+    solution:
+      "Mapped an experience-led PDP narrative with configurators, guided customization cues, and performance budgeting.",
+    result:
+      "A clearer path from browse → customize → purchase with visuals that reinforce quality.",
     technologies: ["Shopify theme concepts", "Three.js / WebGL planning", "glTF pipeline", "Performance budgeting"],
     image: "/projects/p4-shopify-3d.png",
-    actionLabel: "View Demo",
-    actionLink: "#",
+    liveDemoUrl: "",
+    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
   },
   {
-    category: "Shopify ecommerce · 3D product configurator",
-    caption:
-      "Sports merchandise storefront emphasizing guided customization flows — hero messaging paired with locker-room photography.",
+    category: "Shopify · Custom merchandise",
     title: "Custom sportswear commerce — configurator-led UX",
     description:
-      "Shopify-ready UX patterns for customizable SKUs: guided steps, preview storytelling, and conversion-focused merchandising.",
+      "Guided customization UX for merchandise—steps, previews, and merchandising tuned for conversions.",
+    problem:
+      "Custom SKUs create confusion when variant rules and previews aren’t surfaced early in the journey.",
+    solution:
+      "Defined step-by-step customization flows with preview storytelling and Shopify-ready merchandising patterns.",
+    result:
+      "Customers understand valid combinations faster—reducing hesitation at checkout.",
     technologies: ["Shopify Online Store 2.0", "Configurator UX", "Variant logic", "Checkout UX patterns"],
     image: "/projects/p5-shopify-3d.png",
-    actionLabel: "View Demo",
-    actionLink: "#",
+    liveDemoUrl: "",
+    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
   },
   {
-    category: "Automation",
-    caption:
-      "SaaS automation dashboard — visual workflow canvas with branching logic, logs, analytics sidebar, and AI-assisted routing.",
+    category: "Automation platform UI",
     title: "AutomateAI workflow suite — dark UI concept",
     description:
-      "Operator-focused automation UI for monitoring executions, inspecting payloads, and iterating workflows safely.",
+      "Operator dashboard for building workflows—canvas editing, branching logic, logs, and analytics side panels.",
+    problem:
+      "Automation tools become risky when operators can’t trace executions or iterate safely without breaking production flows.",
+    solution:
+      "Built an IA around visualization-first editing with structured logs, diagnostics panels, and safer iteration loops.",
+    result:
+      "A cockpit-style workspace that keeps workflows understandable while scaling complexity.",
     technologies: ["React dashboards", "Workflow graphs", "Real-time logs", "Analytics panels"],
     image: "/projects/p6-automation.png",
-    actionLabel: "View Demo",
-    actionLink: "#",
+    liveDemoUrl: "",
+    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
   },
   {
-    category: "Automation",
-    caption:
-      "Light-theme companion dashboard highlighting workflow clarity — identical IA with softer surfaces for readability-heavy monitoring.",
+    category: "Automation platform UI",
     title: "AutomateAI workflow suite — light UI concept",
     description:
-      "Same automation paradigm as the dark variant: workflow visualization plus operational telemetry for teams.",
+      "Light-theme companion focused on readability-heavy monitoring—same IA with softer surfaces for daily ops.",
+    problem:
+      "Dark dashboards exhaust teams doing long monitoring sessions—yet switching themes shouldn’t fragment workflows.",
+    solution:
+      "Mirrored core workflows with adjusted surfaces, typography contrast, and table-forward readability patterns.",
+    result:
+      "Consistent operational muscle memory across themes without sacrificing clarity.",
     technologies: ["Design tokens", "Tables & graphs", "JSON inspection UX", "Accessibility-aware contrast"],
     image: "/projects/p7-automation.png",
-    actionLabel: "View Demo",
-    actionLink: "#",
+    liveDemoUrl: "",
+    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
   },
 ];
 

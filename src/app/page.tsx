@@ -112,7 +112,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Portfolio"
               title="Featured projects and product builds"
-              description="Replace any placeholder screenshots and links with your real work."
+              description="Selected product work — polished interfaces, measurable outcomes, and production-ready engineering patterns."
             />
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((project) => (
