@@ -242,38 +242,6 @@ export const projects: PortfolioProject[] = [
     liveDemoUrl: "",
     codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
   },
-  {
-    category: "Automation platform UI",
-    title: "AutomateAI workflow suite — dark UI concept",
-    description:
-      "Operator dashboard for building workflows—canvas editing, branching logic, logs, and analytics side panels.",
-    problem:
-      "Automation tools become risky when operators can’t trace executions or iterate safely without breaking production flows.",
-    solution:
-      "Built an IA around visualization-first editing with structured logs, diagnostics panels, and safer iteration loops.",
-    result:
-      "A cockpit-style workspace that keeps workflows understandable while scaling complexity.",
-    technologies: ["React dashboards", "Workflow graphs", "Real-time logs", "Analytics panels"],
-    image: "/projects/p6-automation.png",
-    liveDemoUrl: "",
-    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
-  },
-  {
-    category: "Automation platform UI",
-    title: "AutomateAI workflow suite — light UI concept",
-    description:
-      "Light-theme companion focused on readability-heavy monitoring—same IA with softer surfaces for daily ops.",
-    problem:
-      "Dark dashboards exhaust teams doing long monitoring sessions—yet switching themes shouldn’t fragment workflows.",
-    solution:
-      "Mirrored core workflows with adjusted surfaces, typography contrast, and table-forward readability patterns.",
-    result:
-      "Consistent operational muscle memory across themes without sacrificing clarity.",
-    technologies: ["Design tokens", "Tables & graphs", "JSON inspection UX", "Accessibility-aware contrast"],
-    image: "/projects/p7-automation.png",
-    liveDemoUrl: "",
-    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
-  },
 ];
 
 export const caseStudies = [

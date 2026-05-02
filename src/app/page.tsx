@@ -46,15 +46,51 @@ export default function Home() {
           <SectionReveal className="mx-auto max-w-6xl">
             <SectionHeading
               eyebrow="About"
-              title="Full-stack engineer and product-focused builder"
-              description="I craft robust digital systems that blend business goals, practical automation, polished UI/UX, and measurable outcomes."
+              title="Full-stack engineer with six years in the field"
+              description="I design and ship web and mobile products for marketplaces, startups, and teams that need clarity, speed, and code that lasts."
             />
-            <div className="glass-card grid gap-6 rounded-2xl p-8 md:grid-cols-2">
-              <p className="text-slate-600 dark:text-slate-300">
-                I specialize in full-stack delivery for startups, agencies, and service businesses — from AI
-                features and automation to Shopify e-commerce and interactive 3D configurators — with clean
-                architecture and a shipping mindset.
-              </p>
+            <div className="glass-card grid gap-8 rounded-2xl p-8 md:grid-cols-2 md:gap-10">
+              <div className="space-y-5 text-slate-600 dark:text-slate-300">
+                <p className="text-sm leading-relaxed md:text-[15px]">
+                  I am a <span className="font-semibold text-slate-900 dark:text-white">full-stack web and mobile developer</span> with{" "}
+                  <span className="font-semibold text-slate-900 dark:text-white">six years of professional experience</span>. My work spans modern
+                  frontends, APIs, integrations, and shipped features end-to-end—from first sketch to production deployment.
+                </p>
+                <p className="text-sm leading-relaxed md:text-[15px]">
+                  A major part of my client base comes through{" "}
+                  <span className="font-semibold text-slate-900 dark:text-white">Fiverr</span>, where I have worked with buyers across the{" "}
+                  <span className="font-semibold text-slate-900 dark:text-white">United States, Europe, the UK, and other regions</span>—shipping
+                  automation (including n8n), AI-powered apps and assistants, Shopify experiences, dashboards, and mobile workflows under tight timelines
+                  and real five-star accountability.
+                </p>
+                <p className="text-sm leading-relaxed md:text-[15px]">
+                  Beyond marketplaces, I collaborate with{" "}
+                  <span className="font-semibold text-slate-900 dark:text-white">startups, agencies, and direct clients</span> who need senior-level
+                  ownership: solution architecture, pragmatic UX, integrations with CRMs and messaging stacks, and documentation that makes handoffs
+                  painless.
+                </p>
+                <p className="text-sm leading-relaxed md:text-[15px]">
+                  To date I have successfully completed{" "}
+                  <span className="font-semibold text-slate-900 dark:text-white">more than 50 projects</span>—covering MVPs, production refactors,
+                  automation pipelines, and long-term product iterations—with a consistent focus on measurable outcomes: fewer manual steps, faster
+                  releases, and interfaces people actually enjoy using.
+                </p>
+                <div className="flex flex-wrap gap-3 pt-2">
+                  {[
+                    { label: "Experience", value: "6+ years" },
+                    { label: "Projects delivered", value: "50+" },
+                    { label: "Marketplaces", value: "Fiverr & beyond" },
+                  ].map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-xl border border-sky-200/70 bg-white/65 px-4 py-3 shadow-sm dark:border-cyan-400/25 dark:bg-slate-900/45"
+                    >
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-sky-700 dark:text-cyan-300">{stat.label}</p>
+                      <p className="mt-1 text-sm font-bold text-slate-900 dark:text-white">{stat.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-widest text-sky-700 dark:text-cyan-300">
                   Core Expertise
