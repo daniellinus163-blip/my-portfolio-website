@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Full-stack Developer | AI, Web, Mobile & Automation",
+  title: "Full-Stack Web & Mobile Developer",
   description:
     "Full-stack developer portfolio: AI integration, automation, Shopify e-commerce, 3D configurators, chatbots, web & mobile.",
 };

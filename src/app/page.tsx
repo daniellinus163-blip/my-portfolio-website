@@ -22,11 +22,8 @@ export default function Home() {
           <HeroBackground />
           <div className="animate-fade-up relative z-10 mx-auto max-w-4xl text-white">
             <h1 className="text-balance text-4xl font-bold leading-[1.15] tracking-tight md:text-5xl lg:text-6xl">
-              I build AI-powered web &amp; mobile solutions that automate businesses
+              Full-Stack Web &amp; Mobile Developer
             </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-white/85 md:text-xl">
-              [INSERT YOUR TEXT HERE]
-            </p>
             <div className="mt-11 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="#projects"
