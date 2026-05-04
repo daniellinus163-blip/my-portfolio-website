@@ -17,11 +17,13 @@ type Props = {
 };
 
 const CASE_STEPS = [
+  { key: "visit", label: "Live site" },
   { key: "problem", label: "Problem" },
   { key: "solution", label: "Solution" },
   { key: "result", label: "Result" },
-  { key: "visit", label: "Live site" },
 ] as const;
+
+const LAST_STEP_INDEX = CASE_STEPS.length - 1;
 
 export function ProjectDetailModal({ project, onClose }: Props) {
   const [step, setStep] = useState(0);
@@ -105,55 +107,8 @@ export function ProjectDetailModal({ project, onClose }: Props) {
 
               <div className="min-h-[12rem] flex-1" aria-live="polite">
                 {step === 0 ? (
-                  <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-cyan-300">
-                      Problem
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-200 md:text-[15px]">
-                      {project.problem}
-                    </p>
-                  </div>
-                ) : null}
-                {step === 1 ? (
-                  <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-cyan-300">
-                      Solution
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-200 md:text-[15px]">
-                      {project.solution}
-                    </p>
-                  </div>
-                ) : null}
-                {step === 2 ? (
-                  <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-cyan-300">
-                      Result
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-200 md:text-[15px]">
-                      {project.result}
-                    </p>
-                  </div>
-                ) : null}
-                {step === 3 ? (
                   <div className="space-y-5">
                     <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="rounded-full border border-sky-300/55 bg-sky-500/[0.09] px-3 py-1 text-[11px] font-semibold text-sky-900 dark:border-cyan-400/35 dark:bg-cyan-400/10 dark:text-cyan-50"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="rounded-xl bg-slate-100 p-3 dark:bg-slate-900/90 md:p-4">
-                      <img
-                        src={project.image}
-                        alt={`Preview: ${project.title}`}
-                        className="mx-auto max-h-[min(55vh,560px)] w-full rounded-lg object-contain shadow-md ring-1 ring-black/5 dark:ring-white/10"
-                      />
-                    </div>
                     <div className="rounded-xl border border-sky-200/80 bg-sky-50/60 p-4 dark:border-cyan-400/25 dark:bg-slate-900/60">
                       <p className="text-xs font-semibold uppercase tracking-wide text-sky-800 dark:text-cyan-200">
                         Visit the live project
@@ -169,6 +124,53 @@ export function ProjectDetailModal({ project, onClose }: Props) {
                     </div>
                   </div>
                 ) : null}
+                {step === 1 ? (
+                  <div>
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-cyan-300">
+                      Problem
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-200 md:text-[15px]">
+                      {project.problem}
+                    </p>
+                  </div>
+                ) : null}
+                {step === 2 ? (
+                  <div>
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-cyan-300">
+                      Solution
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-200 md:text-[15px]">
+                      {project.solution}
+                    </p>
+                  </div>
+                ) : null}
+                {step === 3 ? (
+                  <div className="space-y-5">
+                    <div>
+                      <h3 className="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-cyan-300">
+                        Result
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-200 md:text-[15px]">
+                        {project.result}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[11px] font-semibold uppercase tracking-wide text-sky-700 dark:text-cyan-300">
+                        Tech stack
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {project.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="rounded-full border border-sky-300/55 bg-sky-500/[0.09] px-3 py-1 text-[11px] font-semibold text-sky-900 dark:border-cyan-400/35 dark:bg-cyan-400/10 dark:text-cyan-50"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
               </div>
 
               <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-sky-100/90 pt-5 dark:border-white/10">
@@ -180,17 +182,15 @@ export function ProjectDetailModal({ project, onClose }: Props) {
                 >
                   Back
                 </button>
-                {step < 3 ? (
+                {step < LAST_STEP_INDEX ? (
                   <button
                     type="button"
-                    onClick={() => setStep((s) => Math.min(3, s + 1))}
+                    onClick={() => setStep((s) => Math.min(LAST_STEP_INDEX, s + 1))}
                     className="rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-sky-500/25 transition hover:brightness-105"
                   >
                     Next
                   </button>
-                ) : (
-                  <span className="text-xs text-slate-500 dark:text-slate-400">Use the button above to open the site.</span>
-                )}
+                ) : null}
               </div>
             </div>
           ) : (

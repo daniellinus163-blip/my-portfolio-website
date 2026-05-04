@@ -11,8 +11,7 @@ export type PortfolioProject = {
   /** Repository or secondary link; omit or "" to hide “View code” in the modal. */
   codeUrl?: string;
   /**
-   * When set, the project modal opens as a short case study: Problem → Solution → Result → visit link + preview image.
-   * Should match the public URL you want visitors to open (e.g. live product).
+   * When set, modal opens as: Live site → Problem → Solution → Result (no preview image).
    */
   caseStudyVisitUrl?: string;
 };
@@ -169,26 +168,10 @@ export const allTools = Array.from(new Set(skillSpotlights.flatMap((s) => s.tool
 
 export const projects: PortfolioProject[] = [
   {
-    category: "Product design · Figma",
-    title: "AfroHealth-inspired wellness creative direction",
+    category: "Live case study · 3D jersey & commerce",
+    title: "Spized — 3D jersey configurator & custom sportswear",
     description:
-      "Campaign-ready composition blending lifestyle photography, expressive type, and a strong promotional CTA.",
-    problem:
-      "Wellness brands need landing visuals that feel aspirational without sacrificing clarity or scan-friendly structure.",
-    solution:
-      "Built a layered hero system with deliberate contrast, spacing rhythm, and narrative blocks optimized for ads and launches.",
-    result:
-      "A repeatable visual direction teams can extend across landing iterations without redesigning from scratch.",
-    technologies: ["Figma", "Visual hierarchy", "Design tokens", "Marketing layouts"],
-    image: "/projects/p2-figma-design.png",
-    liveDemoUrl: "",
-    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
-  },
-  {
-    category: "Live case study · 3D commerce",
-    title: "Spized — custom sportswear & 3D jersey configurator",
-    description:
-      "Case study walkthrough of Spized's live experience—how a configurator-led sportswear brand presents trust, variants, and checkout—before you open the real site.",
+      "Case study walkthrough of Spized's live experience—how a configurator-led sportswear brand presents trust, variants, and checkout.",
     problem:
       "Clubs and athletes abandon custom kit flows when previews feel abstract—variants, sponsors, and finishes are hard to trust before checkout.",
     solution:
@@ -204,7 +187,7 @@ export const projects: PortfolioProject[] = [
     category: "Live case study · Marketplace",
     title: "VIBECODE Market — multi-category fashion storefront",
     description:
-      "Deployed-style marketplace focused on age-segmented shopping, deals, filters, and a premium catalog experience (see live demo).",
+      "Deployed marketplace focused on age-segmented shopping, deals, filters, and a premium catalog experience.",
     problem:
       "Generic storefront templates fail when you need segmented catalogues (kids through adults), strong merchandising, and fast scan-ability across many SKUs.",
     solution:
@@ -215,6 +198,22 @@ export const projects: PortfolioProject[] = [
     image: "/projects/p1-web-app.png",
     liveDemoUrl: "https://vibecode-market-web-s9jm.vercel.app/",
     caseStudyVisitUrl: "https://vibecode-market-web-s9jm.vercel.app/",
+  },
+  {
+    category: "Product design · Figma",
+    title: "AfroHealth-inspired wellness creative direction",
+    description:
+      "Campaign-ready composition blending lifestyle photography, expressive type, and a strong promotional CTA.",
+    problem:
+      "Wellness brands need landing visuals that feel aspirational without sacrificing clarity or scan-friendly structure.",
+    solution:
+      "Built a layered hero system with deliberate contrast, spacing rhythm, and narrative blocks optimized for ads and launches.",
+    result:
+      "A repeatable visual direction teams can extend across landing iterations without redesigning from scratch.",
+    technologies: ["Figma", "Visual hierarchy", "Design tokens", "Marketing layouts"],
+    image: "/projects/p2-figma-design.png",
+    liveDemoUrl: "",
+    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
   },
 ];
 
