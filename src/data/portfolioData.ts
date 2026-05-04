@@ -8,7 +8,13 @@ export type PortfolioProject = {
   technologies: string[];
   image: string;
   liveDemoUrl: string;
-  codeUrl: string;
+  /** Repository or secondary link; omit or "" to hide “View code” in the modal. */
+  codeUrl?: string;
+  /**
+   * When set, the project modal opens as a short case study: Problem → Solution → Result → visit link + preview image.
+   * Should match the public URL you want visitors to open (e.g. live product).
+   */
+  caseStudyVisitUrl?: string;
 };
 
 export type SkillSpotlight = {
@@ -163,22 +169,6 @@ export const allTools = Array.from(new Set(skillSpotlights.flatMap((s) => s.tool
 
 export const projects: PortfolioProject[] = [
   {
-    category: "Web app",
-    title: "Performance automotive landing experience",
-    description:
-      "Hero-led marketing landing with cinematic visuals, crisp hierarchy, and paired CTAs tuned for launches.",
-    problem:
-      "Product storytelling pages often feel generic—weak hierarchy and CTAs that don’t match the energy of the brand.",
-    solution:
-      "Structured a conversion-focused layout: bold hero, proof-forward sections, responsive typography, and performance-conscious imagery.",
-    result:
-      "A premium landing narrative that reads instantly and guides visitors toward the primary conversion paths.",
-    technologies: ["Next.js / React", "Tailwind CSS", "Responsive layout", "Performance-focused assets"],
-    image: "/projects/p1-web-app.png",
-    liveDemoUrl: "",
-    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
-  },
-  {
     category: "Product design · Figma",
     title: "AfroHealth-inspired wellness creative direction",
     description:
@@ -195,52 +185,36 @@ export const projects: PortfolioProject[] = [
     codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
   },
   {
-    category: "Web app",
-    title: "Aviation brand landing — AeroFly-style experience",
+    category: "Live case study · 3D commerce",
+    title: "Spized — custom sportswear & 3D jersey configurator",
     description:
-      "Trust-forward services landing with aviation storytelling, structured proof sections, and consistent CTAs.",
+      "Case study walkthrough of Spized's live experience—how a configurator-led sportswear brand presents trust, variants, and checkout—before you open the real site.",
     problem:
-      "High-trust services pages collapse when messaging is cluttered—users bounce before understanding the offer.",
+      "Clubs and athletes abandon custom kit flows when previews feel abstract—variants, sponsors, and finishes are hard to trust before checkout.",
     solution:
-      "Designed an editorial grid: authoritative hero, benefit-led sections, feature cards, and a closing conversion band.",
+      "Study and mirror enterprise patterns from leading configurators: sport-specific IA, transparent pricing cues, configurator entry points, and reassurance around production quality and timelines.",
     result:
-      "Clear positioning end-to-end with fewer distractions and stronger continuity from hero to contact.",
-    technologies: ["React / Next.js", "UI components", "Responsive grids", "Brand styling"],
-    image: "/projects/p3-web-app.png",
-    liveDemoUrl: "",
-    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
-  },
-  {
-    category: "Shopify · 3D commerce",
-    title: "Luxury ecommerce visualization concept",
-    description:
-      "Immersive commerce presentation emphasizing configurators, variant storytelling, and premium visual fidelity.",
-    problem:
-      "Premium SKUs lose conversions when shoppers can’t visualize finishes and configurations confidently.",
-    solution:
-      "Mapped an experience-led PDP narrative with configurators, guided customization cues, and performance budgeting.",
-    result:
-      "A clearer path from browse → customize → purchase with visuals that reinforce quality.",
-    technologies: ["Shopify theme concepts", "Three.js / WebGL planning", "glTF pipeline", "Performance budgeting"],
+      "A narrative that sells confidence in customization—clear paths from inspiration → design → order, aligned with how premium sportswear brands convert teams online.",
+    technologies: ["3D / WebGL UX patterns", "E-commerce IA", "Configurator flows", "Performance-aware media"],
     image: "/projects/p4-shopify-3d.png",
-    liveDemoUrl: "",
-    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
+    liveDemoUrl: "https://www.spized.com/en",
+    caseStudyVisitUrl: "https://www.spized.com/en",
   },
   {
-    category: "Shopify · Custom merchandise",
-    title: "Custom sportswear commerce — configurator-led UX",
+    category: "Live case study · Marketplace",
+    title: "VIBECODE Market — multi-category fashion storefront",
     description:
-      "Guided customization UX for merchandise—steps, previews, and merchandising tuned for conversions.",
+      "Deployed-style marketplace focused on age-segmented shopping, deals, filters, and a premium catalog experience (see live demo).",
     problem:
-      "Custom SKUs create confusion when variant rules and previews aren’t surfaced early in the journey.",
+      "Generic storefront templates fail when you need segmented catalogues (kids through adults), strong merchandising, and fast scan-ability across many SKUs.",
     solution:
-      "Defined step-by-step customization flows with preview storytelling and Shopify-ready merchandising patterns.",
+      "Ship a cohesive marketplace shell: category navigation, featured collections, filterable product grids, dark/light affordances, and conversion-oriented listing cards tuned for apparel.",
     result:
-      "Customers understand valid combinations faster—reducing hesitation at checkout.",
-    technologies: ["Shopify Online Store 2.0", "Configurator UX", "Variant logic", "Checkout UX patterns"],
-    image: "/projects/p5-shopify-3d.png",
-    liveDemoUrl: "",
-    codeUrl: "https://github.com/daniellinus163-blip/my-portfolio-website",
+      "A browse-first experience that scales to large inventories while keeping hierarchy obvious—so shoppers find the right lane quickly and checkout feels intentional.",
+    technologies: ["Next.js / React", "Tailwind CSS", "Responsive commerce UI", "Catalog & filters"],
+    image: "/projects/p1-web-app.png",
+    liveDemoUrl: "https://vibecode-market-web-s9jm.vercel.app/",
+    caseStudyVisitUrl: "https://vibecode-market-web-s9jm.vercel.app/",
   },
 ];
 

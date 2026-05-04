@@ -41,7 +41,23 @@ export async function POST(request: Request) {
 
     const apiKey = process.env.RESEND_API_KEY?.trim();
     const toEmail = process.env.CONTACT_TO_EMAIL?.trim();
-    const fromEmail = process.env.CONTACT_FROM_EMAIL || "Portfolio Contact <onboarding@resend.dev>";
+    const fromEmail =
+      process.env.CONTACT_FROM_EMAIL?.trim() || "Portfolio Contact <onboarding@resend.dev>";
+
+    // Avoid confusing Supabase errors when Resend is only half-configured on Vercel etc.
+    if (!(apiKey && toEmail) && (apiKey || toEmail)) {
+      const missing: string[] = [];
+      if (!apiKey) missing.push("RESEND_API_KEY");
+      if (!toEmail) missing.push("CONTACT_TO_EMAIL");
+      return NextResponse.json(
+        {
+          message:
+            `Email sending needs both RESEND_API_KEY and CONTACT_TO_EMAIL on the server. Missing: ${missing.join(", ")}. ` +
+            `In Vercel: Project → Settings → Environment Variables → add for Production (and Preview if you test there), then redeploy.`,
+        },
+        { status: 500 },
+      );
+    }
 
     // 1) Email via Resend when configured
     if (apiKey && toEmail) {
@@ -63,6 +79,7 @@ export async function POST(request: Request) {
       });
 
       if (error) {
+        console.error("[contact] Resend error:", error);
         return NextResponse.json({ message: "Failed to send email. Please try again." }, { status: 502 });
       }
 
@@ -84,7 +101,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          "Contact delivery is not configured. Either add RESEND_API_KEY + CONTACT_TO_EMAIL for email, or finish Supabase setup: paste SUPABASE_SERVICE_ROLE_KEY in .env.local and run supabase/contact_submissions.sql — details: " +
+          "Contact delivery is not configured for this deployment. Add RESEND_API_KEY and CONTACT_TO_EMAIL (Production env on your host), then redeploy—or configure Supabase per supabase/contact_submissions.sql. Server detail: " +
           saved.reason,
       },
       { status: 500 },
