@@ -1,5 +1,8 @@
+import { CustomCursor } from "@/components/portfolio/CustomCursor";
+import { GradientBlobs } from "@/components/portfolio/GradientBlobs";
+import { SiteFooter } from "@/components/portfolio/SiteFooter";
+import { SiteHeader } from "@/components/portfolio/SiteHeader";
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -14,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Full-Stack Web & Mobile Developer",
+  title: "Full-Stack Web & Mobile Developer | Modern Portfolio",
   description:
-    "Full-stack developer portfolio: AI integration, automation, Shopify e-commerce, 3D configurators, chatbots, web & mobile.",
+    "Award-style portfolio showcasing web apps, mobile apps, and product design — frontend & mobile development with a bright, modern aesthetic.",
 };
 
 export default function RootLayout({
@@ -25,12 +28,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="flex min-h-full flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col text-indigo-950">
+        <CustomCursor />
+        <GradientBlobs />
+        <SiteHeader />
+        <div className="flex-1">{children}</div>
+        <SiteFooter />
       </body>
     </html>
   );

@@ -76,7 +76,7 @@ export function ContactForm() {
       />
       <button
         disabled={submitState === "loading"}
-        className="rounded-full bg-gradient-to-r from-sky-500 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-sky-500/25 disabled:cursor-not-allowed disabled:opacity-70"
+        className="btn-primary rounded-full px-6 py-3 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-70"
       >
         {submitState === "loading" ? "Sending..." : "Send Message"}
       </button>
