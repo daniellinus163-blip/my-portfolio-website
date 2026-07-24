@@ -7,19 +7,15 @@ import { WebAppProjectCard } from "./WebAppProjectCard";
 
 export function ProjectsShowcase() {
   return (
-    <div className="mx-auto max-w-6xl space-y-20 pb-24">
+    <div className="mx-auto max-w-6xl space-y-16">
       <ScrollReveal>
         <section id="web-apps">
-          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-violet-600">01 — Web</p>
-              <h2 className="mt-2 text-3xl font-extrabold text-indigo-950 md:text-4xl">Web apps</h2>
-              <p className="mt-2 max-w-xl text-sm text-slate-600">
-                Live websites, dashboards, and marketplaces—shown in premium browser previews with direct links to production.
-              </p>
-            </div>
-          </div>
-          <div className="grid gap-8 lg:grid-cols-2">
+          <p className="section-label">01 — Web</p>
+          <h2 className="mt-2 text-3xl font-extrabold text-[#F8FAFC] md:text-4xl">Web apps</h2>
+          <p className="mt-2 max-w-xl text-sm text-muted">
+            Live websites and marketplaces in premium browser previews.
+          </p>
+          <div className="mt-8 grid gap-8 lg:grid-cols-2">
             {webApps.map((project, i) => (
               <ScrollReveal key={project.slug} delay={i * 0.06}>
                 <WebAppProjectCard project={project} />
@@ -31,14 +27,10 @@ export function ProjectsShowcase() {
 
       <ScrollReveal>
         <section id="mobile-apps">
-          <div className="mb-8">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-coral-500">02 — Mobile</p>
-            <h2 className="mt-2 text-3xl font-extrabold text-indigo-950 md:text-4xl">Mobile apps</h2>
-            <p className="mt-2 max-w-xl text-sm text-slate-600">
-              Realistic phone mockups with app UI screens, colorful surfaces, and smooth hover motion.
-            </p>
-          </div>
-          <div className="grid gap-8">
+          <p className="section-label">02 — Mobile</p>
+          <h2 className="mt-2 text-3xl font-extrabold text-[#F8FAFC] md:text-4xl">Mobile apps</h2>
+          <p className="mt-2 max-w-xl text-sm text-muted">Phone mockups with polished app UI.</p>
+          <div className="mt-8 grid gap-8">
             {mobileApps.map((project, i) => (
               <ScrollReveal key={project.slug} delay={i * 0.08}>
                 <MobileAppProjectCard project={project} />

@@ -10,7 +10,7 @@ type Props = {
 };
 
 export function PhoneGallery({ images, alt }: Props) {
-  const slides = images.length > 0 ? images : ["/projects/p1-web-app.png"];
+  const slides = images.length > 0 ? images : ["/projects/vibecode-market.png"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {

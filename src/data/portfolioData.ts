@@ -21,7 +21,6 @@ export type PortfolioProject = {
   result: string;
   features: string[];
   technologies: string[];
-  /** Website / app preview (browser or device screen) */
   image: string;
   gallery: string[];
   videoUrl?: string;
@@ -33,19 +32,93 @@ export type PortfolioProject = {
 
 export const profile = {
   name: "Daniel",
-  role: "Full-Stack Web & Mobile Developer",
-  tagline: "I craft vibrant web and mobile experiences that feel fast, polished, and conversion-ready.",
+  role: "Full Stack Developer · AI Engineer · Creative Technologist",
+  tagline:
+    "I build modern web applications, AI-powered solutions, scalable backend systems, mobile applications, automation tools, and immersive digital experiences.",
   email: "yourname@email.com",
   yearsExperience: 6,
   projectsDelivered: "50+",
   marketplaces: "Fiverr & direct clients",
+  portrait: "/profile/my-self.png",
 };
 
-/** ~15s hero clips — autoplay, muted, loop (add more files under public/videos/) */
-export const heroVideoClips = [
-  { src: "/hero-bg.mp4", label: "Web dashboard" },
-  { src: "/videos/ai-coding-bg.mp4", label: "Product build" },
-  { src: "/hero-bg.mp4", label: "UI interactions" },
+/** Cinematic hero slideshow — dev / mobile / design scenes (Unsplash). */
+export const heroScenes = [
+  {
+    id: "coding-laptop",
+    label: "Web development",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80",
+  },
+  {
+    id: "developer-desk",
+    label: "Modern workspace",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&q=80",
+  },
+  {
+    id: "programming-screen",
+    label: "Programming in flow",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80",
+  },
+  {
+    id: "analytics",
+    label: "Product dashboards",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80",
+  },
+  {
+    id: "mobile-dev",
+    label: "Mobile development",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1920&q=80",
+  },
+  {
+    id: "ui-design",
+    label: "UI / UX design",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&q=80",
+  },
+] as const;
+
+export const heroToolSlides = [
+  {
+    id: "frontend",
+    title: "Frontend Engineering",
+    tools: ["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+    icons: ["⚛️", "▲", "📘", "🎨", "🎬"],
+  },
+  {
+    id: "backend",
+    title: "Backend & APIs",
+    tools: ["Node.js", "REST APIs", "Supabase", "PostgreSQL", "Vercel"],
+    icons: ["🟢", "🔌", "⚡", "🐘", "▲"],
+  },
+  {
+    id: "mobile",
+    title: "Mobile Development",
+    tools: ["React Native", "Expo", "iOS", "Android", "Mobile UX"],
+    icons: ["📱", "🚀", "🍎", "🤖", "✨"],
+  },
+] as const;
+
+export const heroBackgroundVideo = "/hero-bg.mp4";
+
+export const socialLinks = [
+  { label: "GitHub", href: "https://github.com", icon: "github" },
+  { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
+  { label: "Fiverr", href: "https://www.fiverr.com", icon: "fiverr" },
+  { label: "Email", href: "mailto:yourname@email.com", icon: "email" },
+] as const;
+
+export const skillGroups = [
+  {
+    title: "Frontend",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    title: "Mobile",
+    skills: ["React Native", "Expo", "iOS & Android", "Mobile UX"],
+  },
+  {
+    title: "Backend & tools",
+    skills: ["Node.js", "REST APIs", "Supabase", "Vercel", "Figma"],
+  },
 ] as const;
 
 export const projects: PortfolioProject[] = [
@@ -71,8 +144,8 @@ export const projects: PortfolioProject[] = [
       "Mobile-responsive storefront patterns",
     ],
     technologies: ["Next.js", "3D UX", "E-commerce", "Performance", "WebGL"],
-    image: "/projects/p4-shopify-3d.png",
-    gallery: ["/projects/p4-shopify-3d.png", "/projects/p5-shopify-3d.png"],
+    image: "/projects/spized.png",
+    gallery: ["/projects/spized.png"],
     liveDemoUrl: "https://www.spized.com/en",
     caseStudyVisitUrl: "https://www.spized.com/en",
     accent: "sky",
@@ -99,94 +172,66 @@ export const projects: PortfolioProject[] = [
       "Responsive catalog cards",
     ],
     technologies: ["Next.js", "React", "Tailwind", "Commerce UI", "Vercel"],
-    image: "/projects/p1-web-app.png",
-    gallery: ["/projects/p1-web-app.png", "/projects/p3-web-app.png"],
-    videoUrl: "/hero-bg.mp4",
+    image: "/projects/vibecode-market.png",
+    gallery: ["/projects/vibecode-market.png"],
     liveDemoUrl: "https://vibecode-market-web-s9jm.vercel.app/",
     caseStudyVisitUrl: "https://vibecode-market-web-s9jm.vercel.app/",
     accent: "violet",
   },
   {
-    slug: "racing-cars-landing",
+    slug: "figma-design-system",
     type: "web",
-    category: "Marketing site",
-    title: "RacingCars — launch landing",
-    description: "High-energy automotive landing with gradient type, cinematic hero, and dual CTAs.",
+    category: "UI / UX",
+    title: "Figma — product design system",
+    description: "Creative health-tech UI exploration with bold typography, gradients, and component-ready layouts.",
     overview:
-      "A launch narrative that sells speed and trust—bold hero, proof sections, and performance-conscious responsive layout.",
+      "A Figma-led design pass for a modern product landing—hero storytelling, feature grids, and mobile-first component specs ready for engineering handoff.",
     problem:
-      "Launch pages often feel generic—weak hierarchy and CTAs that don't match brand energy.",
+      "Early-stage products need a credible visual direction before engineering commits to a full build.",
     solution:
-      "Structured a hero-led narrative with proof sections, responsive type, and performance-conscious assets.",
+      "Delivered responsive frames, type scale, color system, and reusable components aligned to conversion goals.",
     result:
-      "A premium launch story that reads instantly and guides visitors toward exploration and sign-up.",
+      "Stakeholders could review a polished narrative and UI kit before a single line of production code.",
     features: [
-      "Gradient headline system",
-      "Dual primary CTAs",
-      "Cinematic hero imagery",
-      "Feature grid sections",
-      "Fully responsive layout",
+      "Hero & feature section systems",
+      "Mobile + desktop artboards",
+      "Component variants & tokens",
+      "Accessibility-minded contrast",
+      "Developer handoff specs",
     ],
-    technologies: ["React", "Tailwind", "Framer Motion", "Responsive"],
-    image: "/projects/p3-web-app.png",
-    gallery: ["/projects/p3-web-app.png"],
+    technologies: ["Figma", "UI Design", "Design systems", "Prototyping"],
+    image: "/projects/p2-figma-design.png",
+    gallery: ["/projects/p2-figma-design.png"],
     liveDemoUrl: "",
     accent: "coral",
   },
   {
-    slug: "vibecode-mobile",
+    slug: "drivedash",
     type: "mobile",
-    category: "E-commerce",
-    title: "VIBECODE Shop",
-    description: "Companion mobile storefront with tabs, product cards, and thumb-friendly checkout.",
+    category: "Transportation",
+    title: "DriveDash",
+    description: "Modern ride-hailing and transportation app with real-time tracking and booking features.",
     overview:
-      "Mobile-first shopping with bottom navigation, swipe galleries, and lane shortcuts for faster discovery.",
+      "A comprehensive mobile application for ride-hailing services featuring real-time driver tracking, seamless booking, and secure payment integration.",
     problem:
-      "Mobile shoppers bounce when navigation is cramped and product discovery feels like a shrunk desktop site.",
+      "Users need a reliable and intuitive mobile app to book rides and track their drivers in real-time.",
     solution:
-      "Designed bottom-nav IA, swipe-friendly galleries, sticky CTAs, and age-segment shortcuts for fast lane switching.",
+      "Built a full-featured mobile app with React Native and Expo, incorporating real-time location tracking, secure payments, and an intuitive user interface.",
     result:
-      "Higher engagement on small screens with clearer paths from browse → product → cart.",
+      "Users can easily book rides, track their drivers in real-time, and complete payments securely within the app.",
     features: [
-      "Bottom tab navigation",
-      "Product card grids",
-      "Category lane shortcuts",
-      "Sticky add-to-cart patterns",
-      "Thumb-zone CTAs",
+      "Real-time driver tracking",
+      "Secure in-app payments",
+      "Ride booking and scheduling",
+      "User-friendly interface",
+      "Driver rating system",
     ],
-    technologies: ["React Native", "Expo", "Mobile UX", "REST APIs"],
-    image: "/projects/p1-web-app.png",
-    gallery: ["/projects/p1-web-app.png"],
-    liveDemoUrl: "https://vibecode-market-web-s9jm.vercel.app/",
-    caseStudyVisitUrl: "https://vibecode-market-web-s9jm.vercel.app/",
+    technologies: ["React Native", "Expo", "Real-time tracking", "Payment integration", "Mobile UX"],
+    image: "/projects/drivedash.png",
+    gallery: ["/projects/drivedash.png"],
+    liveDemoUrl: "https://expo.dev/accounts/youngdaylan/projects/drivedash/builds/be856a69-b1e9-4496-8e77-b140b24043fd",
+    caseStudyVisitUrl: "https://expo.dev/accounts/youngdaylan/projects/drivedash/builds/be856a69-b1e9-4496-8e77-b140b24043fd",
     accent: "lime",
-  },
-  {
-    slug: "ops-command-mobile",
-    type: "mobile",
-    category: "Productivity",
-    title: "Ops Command",
-    description: "Field-friendly workflow dashboard for runs, alerts, and quick actions on the go.",
-    overview:
-      "A compact ops cockpit for monitoring executions, inspecting payloads, and acting without a laptop.",
-    problem:
-      "Operators miss critical workflow events when desktop-only tooling doesn't travel with the team.",
-    solution:
-      "Shipped card-based status views, compact charts, and one-tap drill-downs optimized for one-handed use.",
-    result:
-      "Faster response loops and fewer missed executions without opening a laptop.",
-    features: [
-      "Run status cards",
-      "Compact analytics",
-      "Alert summaries",
-      "One-handed navigation",
-      "Dark UI for long sessions",
-    ],
-    technologies: ["React Native", "Charts", "Push notifications", "Offline UX"],
-    image: "/projects/p6-automation.png",
-    gallery: ["/projects/p6-automation.png", "/projects/p7-automation.png"],
-    liveDemoUrl: "",
-    accent: "orange",
   },
 ];
 

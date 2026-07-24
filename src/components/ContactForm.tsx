@@ -51,37 +51,37 @@ export function ContactForm() {
         name="name"
         placeholder="Your name"
         required
-        className="w-full rounded-lg border border-slate-200/90 bg-white/70 px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-200/60 dark:border-slate-600/80 dark:bg-slate-900/55 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-cyan-400 dark:focus:ring-cyan-500/25"
+        className="w-full rounded-xl border-2 border-rose-200 bg-white/95 px-4 py-3 text-sm font-bold text-[#2a1218] outline-none transition placeholder:font-bold placeholder:text-[#351820] focus:border-[#be123c] focus:ring-2 focus:ring-rose-200"
       />
       <input
         type="email"
         name="email"
         placeholder="Your email"
         required
-        className="w-full rounded-lg border border-slate-200/90 bg-white/70 px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-200/60 dark:border-slate-600/80 dark:bg-slate-900/55 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-cyan-400 dark:focus:ring-cyan-500/25"
+        className="w-full rounded-xl border-2 border-rose-200 bg-white/95 px-4 py-3 text-sm font-bold text-[#2a1218] outline-none transition placeholder:font-bold placeholder:text-[#351820] focus:border-[#be123c] focus:ring-2 focus:ring-rose-200"
       />
       <input
         type="tel"
         name="whatsapp"
         placeholder="Your WhatsApp number (e.g. +2348012345678)"
         required
-        className="w-full rounded-lg border border-slate-200/90 bg-white/70 px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-200/60 dark:border-slate-600/80 dark:bg-slate-900/55 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-cyan-400 dark:focus:ring-cyan-500/25"
+        className="w-full rounded-xl border-2 border-rose-200 bg-white/95 px-4 py-3 text-sm font-bold text-[#2a1218] outline-none transition placeholder:font-bold placeholder:text-[#351820] focus:border-[#be123c] focus:ring-2 focus:ring-rose-200"
       />
       <textarea
         name="message"
         placeholder="Tell me about your project"
         rows={5}
         required
-        className="w-full rounded-lg border border-slate-200/90 bg-white/70 px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-200/60 dark:border-slate-600/80 dark:bg-slate-900/55 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-cyan-400 dark:focus:ring-cyan-500/25"
+        className="w-full rounded-xl border-2 border-rose-200 bg-white/95 px-4 py-3 text-sm font-bold text-[#2a1218] outline-none transition placeholder:font-bold placeholder:text-[#351820] focus:border-[#be123c] focus:ring-2 focus:ring-rose-200"
       />
       <button
         disabled={submitState === "loading"}
-        className="btn-primary rounded-full px-6 py-3 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-70"
+        className="btn-primary rounded-full px-6 py-3 text-sm text-white disabled:cursor-not-allowed disabled:opacity-70"
       >
         {submitState === "loading" ? "Sending..." : "Send Message"}
       </button>
       {message ? (
-        <p className={`text-sm ${submitState === "success" ? "text-emerald-700" : "text-rose-600"}`}>{message}</p>
+        <p className={`text-sm ${submitState === "success" ? "text-emerald-700" : "text-[#be123c]"}`}>{message}</p>
       ) : null}
     </form>
   );

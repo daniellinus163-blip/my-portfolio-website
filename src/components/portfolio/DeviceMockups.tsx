@@ -72,7 +72,7 @@ export function DeviceMockups() {
         transition={{ duration: 0.7, delay: 0.55 }}
       >
         <div className="glass-card rotate-3 overflow-hidden rounded-2xl p-1.5">
-          <Image src="/projects/p1-web-app.png" alt="" width={400} height={240} className="rounded-xl object-cover" />
+          <Image src="/projects/vibecode-market.png" alt="" width={400} height={240} className="rounded-xl object-cover" />
         </div>
       </motion.div>
 
@@ -81,7 +81,7 @@ export function DeviceMockups() {
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Image src="/projects/p4-shopify-3d.png" alt="" width={120} height={80} className="rounded-lg object-cover" />
+        <Image src="/projects/spized.png" alt="" width={120} height={80} className="rounded-lg object-cover" />
       </motion.div>
     </div>
   );

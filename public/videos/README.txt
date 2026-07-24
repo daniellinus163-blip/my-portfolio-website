@@ -1,5 +1,6 @@
-Place your compressed hero background video here as:
+Hero background video:
 
-  ai-coding-bg.mp4
+  Prefer replacing /public/hero-bg.mp4 with a loop of real mobile + web app UI in motion.
+  Do not use AI/coding/terminal themed clips.
 
-Recommended: short loop (10–30s), 720p–1080p, H.264, muted-friendly visuals (code editors, terminals, abstract tech).
+  The site reads heroBackgroundVideo from src/data/portfolioData.ts (default: /hero-bg.mp4).

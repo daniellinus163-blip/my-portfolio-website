@@ -36,9 +36,9 @@ export function ProjectDetailPremium({ project }: Props) {
         className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${accentGradients[project.accent]} p-[2px] shadow-2xl`}
       >
         <div className="rounded-[1.4rem] bg-white/95 p-6 md:p-10">
-          <p className="text-xs font-bold uppercase tracking-wider text-violet-600">{project.category}</p>
-          <h1 className="mt-2 text-3xl font-extrabold text-indigo-950 md:text-4xl">{project.title}</h1>
-          <p className="mt-4 max-w-2xl text-slate-600">{project.overview}</p>
+          <p className="section-label">{project.category}</p>
+          <h1 className="mt-2 text-3xl font-extrabold text-[#F8FAFC] md:text-4xl">{project.title}</h1>
+          <p className="mt-4 max-w-2xl text-muted">{project.overview}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             {hasLive ? (
               <a
@@ -55,7 +55,7 @@ export function ProjectDetailPremium({ project }: Props) {
                 href={project.codeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border-2 border-violet-200 bg-white px-6 py-3 text-sm font-bold text-indigo-950"
+                className="btn-ghost rounded-full px-6 py-3 text-sm font-bold text-[#F8FAFC]"
               >
                 GitHub
               </a>
@@ -76,8 +76,8 @@ export function ProjectDetailPremium({ project }: Props) {
       {project.videoUrl ? (
         <ScrollReveal>
           <section className="glass-card rounded-3xl p-6 md:p-8">
-            <h2 className="text-lg font-bold text-indigo-950">App in motion</h2>
-            <p className="mt-1 text-sm text-slate-600">Looping preview — muted autoplay.</p>
+            <h2 className="text-lg font-bold text-[#F8FAFC]">App in motion</h2>
+            <p className="mt-1 text-sm text-muted">Looping preview — muted autoplay.</p>
             <div className="relative mt-4 aspect-video overflow-hidden rounded-2xl">
               <video src={project.videoUrl} className="h-full w-full object-cover" autoPlay muted loop playsInline />
             </div>
@@ -87,19 +87,19 @@ export function ProjectDetailPremium({ project }: Props) {
 
       <ScrollReveal>
         <section className="glass-card rounded-3xl p-6 md:p-8">
-          <h2 className="text-lg font-bold text-indigo-950">Overview</h2>
-          <p className="mt-3 text-sm leading-relaxed text-slate-700 md:text-base">{project.description}</p>
+          <h2 className="text-lg font-bold text-[#F8FAFC]">Overview</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted md:text-base">{project.description}</p>
         </section>
       </ScrollReveal>
 
       <ScrollReveal>
         <section className="glass-card rounded-3xl p-6 md:p-8">
-          <h2 className="text-lg font-bold text-indigo-950">Features</h2>
+          <h2 className="text-lg font-bold text-[#F8FAFC]">Features</h2>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
             {project.features.map((f) => (
               <li
                 key={f}
-                className="flex items-start gap-2 rounded-xl border border-violet-100 bg-violet-50/50 px-4 py-3 text-sm text-slate-700"
+                className="flex items-start gap-2 rounded-xl border border-[rgba(0,229,255,0.15)] bg-[rgba(0,229,255,0.06)] px-4 py-3 text-sm text-muted"
               >
                 <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />
                 {f}
@@ -117,8 +117,8 @@ export function ProjectDetailPremium({ project }: Props) {
         ].map((block, i) => (
           <ScrollReveal key={block.label} delay={i * 0.05}>
             <div className="glass-card h-full rounded-2xl p-5">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-violet-600">{block.label}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">{block.text}</p>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#00E5FF]">{block.label}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{block.text}</p>
             </div>
           </ScrollReveal>
         ))}
@@ -126,12 +126,12 @@ export function ProjectDetailPremium({ project }: Props) {
 
       <ScrollReveal>
         <section className="glass-card rounded-3xl p-6 md:p-8">
-          <h2 className="text-lg font-bold text-indigo-950">Technology stack</h2>
+          <h2 className="text-lg font-bold text-[#F8FAFC]">Technology stack</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-violet-200 bg-white px-4 py-2 text-sm font-semibold text-violet-800 shadow-sm"
+                className="rounded-full border border-[rgba(0,229,255,0.2)] bg-[rgba(0,229,255,0.08)] px-4 py-2 text-sm font-bold text-[#00E5FF] shadow-sm"
               >
                 {tech}
               </span>
@@ -142,7 +142,7 @@ export function ProjectDetailPremium({ project }: Props) {
 
       <ScrollReveal>
         <section>
-          <h2 className="text-lg font-bold text-indigo-950">Gallery</h2>
+          <h2 className="text-lg font-bold text-[#F8FAFC]">Gallery</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {project.gallery.map((src, i) => (
               <motion.div
@@ -158,7 +158,7 @@ export function ProjectDetailPremium({ project }: Props) {
       </ScrollReveal>
 
       <div className="flex flex-wrap gap-3 border-t border-violet-100 pt-8">
-        <Link href="/projects" className="text-sm font-semibold text-violet-600 hover:text-violet-800">
+        <Link href="/#projects" className="text-sm font-bold text-[#00E5FF] hover:text-[#F8FAFC]">
           ← All projects
         </Link>
       </div>

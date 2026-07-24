@@ -11,7 +11,7 @@ export function TestimonialCard({ image, alt }: TestimonialCardProps) {
       <img
         src={image}
         alt={alt}
-        className="max-h-[420px] w-full rounded-xl bg-white object-contain object-top shadow-sm"
+        className="max-h-[420px] w-full rounded-xl bg-[rgba(15,23,42,0.8)] object-contain object-top shadow-sm"
       />
     </article>
   );

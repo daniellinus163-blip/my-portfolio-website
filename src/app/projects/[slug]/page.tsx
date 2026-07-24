@@ -17,7 +17,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   return (
     <div className="px-5 pb-24 md:px-8">
       <div className="mx-auto max-w-4xl pt-28 md:pt-32">
-        <Link href="/projects" className="text-sm font-semibold text-violet-600 hover:text-violet-800">
+        <Link href="/projects" className="text-sm font-bold text-[#be123c] hover:text-[#9f1239]">
           ← Back to projects
         </Link>
         <div className="mt-8">
